@@ -33,7 +33,7 @@ function EditTraining(props) {
     };
 
     const inputChanged = (event) => {
-        setCustomer({...training, [event.target.name]: event.target.value})
+        setTraining({...training, [event.target.name]: event.target.value})
     }
 
     const handleSave = () => {
@@ -45,7 +45,7 @@ function EditTraining(props) {
     return(
         <div>
         <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-          Edit training
+          Edit
         </Button>
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
           <DialogTitle id="form-dialog-title">Edit training</DialogTitle>

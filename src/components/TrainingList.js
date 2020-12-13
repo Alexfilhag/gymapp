@@ -6,6 +6,7 @@ import 'ag-grid-community/dist/styles/ag-theme-material.css';
 import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/snackbar';
 import moment from 'moment/moment';
+import EditTraining from './EditTraining';
 
 
 
@@ -33,7 +34,13 @@ function TrainingList () {
      width: 100,
      cellRendererFramework: params => <Button color="secondary" size="small" onClick={() =>deleteTraining(params)}>Delete
       </Button> 
-    }
+    },
+    {headerName: '', 
+     field: 'id', 
+     width: 100,
+     cellRendererFramework: params => <EditTraining updateTraining={updateTraining} params={params}/> 
+      
+    },
 ]
 
 
@@ -60,6 +67,21 @@ function TrainingList () {
     .catch(err => console.error(err))
     }   
 }
+
+
+const updateTraining = (link, training) => {
+    fetch ('https://customerrest.herokuapp.com/api/trainings/' + link.data.id, {
+        method: 'PUT',
+        headers: {
+            'Content-type' : 'application/json'
+        },
+        body: JSON.stringify(training)
+    })
+    .then(_ => getTrainings())
+    .then(_ => setMsg('Edit successful'))
+    .then(_ => setOpen(true))
+    .catch(err => console.error(err))
+}  
 
 
 
