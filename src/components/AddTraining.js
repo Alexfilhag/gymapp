@@ -64,7 +64,7 @@ function AddTraining(props) {
           />
 
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
-            <DateTimePicker style={{margin: 5}} label="Date" format='dd.MM.yyyy HH:mm' onChange={date => changeDate(date)} value={date} id="date" name="date" />
+            <DateTimePicker label="Date" format='dd.MM.yyyy HH:mm' onChange={date => changeDate(date)} value={date} id="date" name="date" />
           </MuiPickersUtilsProvider> 
 
           <TextField

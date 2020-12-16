@@ -38,7 +38,7 @@ function AddCustomer(props) {
   
     return(
         <div>
-        <Button alignItems= "center"  variant="outlined" color="primary" onClick={handleClickOpen}>
+        <Button alignItems= "center"  variant="contained" color="primary" onClick={handleClickOpen}>
           Add Customer
         </Button>
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
