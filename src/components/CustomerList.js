@@ -15,7 +15,7 @@ function CustomerList () {
 
  const [customers, setCustomers] = useState([]);
  const [open, setOpen] = useState(false);
- const [msg, setMsg] = useState('');
+ const [msg, setMsg] = useState('List of customers');
 
  const gridRef = useRef();
 
@@ -42,7 +42,7 @@ function CustomerList () {
       </Button> 
     },
     {headerName: '',
-    width:190,
+    width:180,
     field: 'links.0.href',
     cellRendererFramework: params => <AddTraining addTrainings={addTrainings} params={params}/>
    }
@@ -132,8 +132,9 @@ function CustomerList () {
 
 
 
- return(
+ return( 
      <div >
+         
          <div style = {{width: '15%', margin: 'auto'}}>
          <AddCustomer  addCustomer={addCustomer}
          

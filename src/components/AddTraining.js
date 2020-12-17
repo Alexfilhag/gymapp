@@ -35,7 +35,7 @@ function AddTraining(props) {
     }
 
     const handleSave = () => {
-    props.addTraining(training);
+    props.addTrainings(training);
     handleClose();
     }
 
@@ -64,7 +64,7 @@ function AddTraining(props) {
           />
 
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
-            <DateTimePicker label="Date" format='dd.MM.yyyy HH:mm' onChange={date => changeDate(date)} value={date} id="date" name="date" />
+            <DateTimePicker label="Date" format='dd.MM.yyyy HH:mm' onChange={date => changeDate(date)} name="date" value={date} id="date"  />
           </MuiPickersUtilsProvider> 
 
           <TextField
